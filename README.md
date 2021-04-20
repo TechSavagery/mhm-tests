@@ -41,9 +41,9 @@
     <br />
     <br />
     ·
-    <a href="https://github.com/TechSavagery/mhm-tests/issues">Report Bug</a>
+    <a href="https://github.com/TechSavagery/mhm-tests/issues">Report Test Automation Defect</a>
     ·
-    <a href="https://github.com/TechSavagery/mhm-tests/issues">Request Feature</a>
+    <a href="https://github.com/TechSavagery/mhm-tests/issues">Request Test Automation</a>
   </p>
 </p>
 
@@ -65,7 +65,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
