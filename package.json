@@ -1,0 +1,23 @@
+{
+  "name": "mhm-automated-tests",
+  "version": "1.0.0",
+  "description": "Test suite to validate features of the Mental Health Match web app.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^7.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechSavagery/mhm-tests.git"
+  },
+  "author": "LaDell Erby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechSavagery/mhm-tests/issues"
+  },
+  "homepage": "https://github.com/TechSavagery/mhm-tests#readme"
+}
