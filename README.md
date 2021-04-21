@@ -107,11 +107,26 @@ To run this locally follow these steps.
 
 ## Usage
 
-To Run Smoke Tests:
-`npm run cypress`
+To Run Tests in specfic environments:
+```
+interactive: starts a test managemment browser that allows you to run tests via a GUI
+monitor: Provides the same GUI but automatically runs so that you can just watch it do its thing 
+ci: runs headlessly so you can leverage this in builds 
+```
+## Development
+`npm run test:interactive:dev`
+`npm run test:monitor:dev`
+`npm run test:ci:dev`
 
-To Run Tests in specfic environments
-`npm run cypress --dev`
+## QA 
+`npm run test:interactive:qa`
+`npm run test:monitor:qa`
+`npm run test:ci:dev`
+
+## Production 
+`npm run test:interactive:prod`
+`npm run test:monitor:prod`
+`npm run test:ci:prod`
 
 <!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 

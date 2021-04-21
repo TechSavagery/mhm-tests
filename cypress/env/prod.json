@@ -1,0 +1,10 @@
+{
+    "env": {
+      "baseUrl": "https://mentalhealthmatch.com/",
+      "integrationFolder": "cypress/integration",
+      "therapist-subscribed": {
+        "email": "ladellerby@techsavagery.net",
+        "password": "test1234!"
+      }
+    }
+  }

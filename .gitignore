@@ -1,2 +1,5 @@
 node_modules
-**/**/integration/examples
+# cypress 
+cypress/integration/examples
+cypress/videos
+cypress/screenshots
