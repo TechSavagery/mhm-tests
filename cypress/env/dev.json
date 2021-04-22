@@ -1,4 +1,5 @@
 {
+  "experimentalStudio": true,
   "env": {
     "baseUrl": "https://dev.mentalhealthmatch.com/",
     "integrationFolder": "cypress/integration",

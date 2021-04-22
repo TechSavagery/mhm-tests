@@ -114,19 +114,19 @@ monitor: Provides the same GUI but automatically runs so that you can just watch
 ci: runs headlessly so you can leverage this in builds 
 ```
 ## Development
-`npm run test:interactive:dev`
-`npm run test:monitor:dev`
-`npm run test:ci:dev`
+`npm run test:interactive:dev`  
+`npm run test:monitor:dev`  
+`npm run test:ci:dev`  
 
 ## QA 
-`npm run test:interactive:qa`
-`npm run test:monitor:qa`
-`npm run test:ci:dev`
+`npm run test:interactive:qa`  
+`npm run test:monitor:qa`  
+`npm run test:ci:dev`  
 
 ## Production 
-`npm run test:interactive:prod`
-`npm run test:monitor:prod`
-`npm run test:ci:prod`
+`npm run test:interactive:prod`  
+`npm run test:monitor:prod`  
+`npm run test:ci:prod`  
 
 <!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
