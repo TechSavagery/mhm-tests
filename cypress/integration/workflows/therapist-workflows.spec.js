@@ -1,9 +1,14 @@
 describe("Therapist Workflow Tests", () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('baseUrl'));
+    cy.window().then((win) => {
+      win.sessionStorage.clear()
+    })
+cy.clearCookies();
+cy.visit(Cypress.env('baseUrl'));
   });
 
-  it("Therapist - Login - Desktop", () => {
+  it("Therapist - Login - Desktop #smoke", () => {
+    cy.viewport('macbook-13')
     cy.get(":nth-child(4) > .nav-link").click();
     cy.get(".nav-link > strong").click();
     cy.get("#inputEmail").clear();
@@ -12,7 +17,7 @@ describe("Therapist Workflow Tests", () => {
     cy.get("#inputPassword").type(Cypress.env('therapist-subscribed').password);
     cy.get(".btn").click();
   });
-  it("Therapist - Login Tablet", () => {
+  it("Therapist - Login Tablet #smoke", () => {
     cy.viewport('ipad-2')
 
     cy.get('.part-1').click();
@@ -27,7 +32,7 @@ describe("Therapist Workflow Tests", () => {
 
   });
 
-  it("Therapist - Login Mobile", () => {
+  it("Therapist - Login Mobile #smoke", () => {
     cy.viewport('iphone-8')
     cy.get('.part-1').click();
     cy.get(':nth-child(4) > .nav-link-mobile').click();

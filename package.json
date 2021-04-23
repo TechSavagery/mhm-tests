@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^7.1.0"
+    "cypress": "^7.1.0",
+    "cypress-audit": "^0.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
