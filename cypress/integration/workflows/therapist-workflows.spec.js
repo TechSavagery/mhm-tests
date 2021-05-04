@@ -6,7 +6,6 @@ describe("Therapist Workflow Tests", () => {
 cy.clearCookies();
 cy.visit(Cypress.env('baseUrl'));
   });
-
   it("Therapist - Login - Desktop #smoke", () => {
     cy.viewport('macbook-13')
     cy.get(":nth-child(4) > .nav-link").click();
