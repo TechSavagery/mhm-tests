@@ -17,11 +17,19 @@ describe("Contact Us Page Tests", () => {
       cy.get('#contactName').clear().type('Test Contact');
       cy.get('#emailInput').clear().type('test@mentalhealthmatch.com');
       cy.get('#comment').clear().type('This is a test message');
-      cy.get('#recaptcha-anchor').click({force: true});
-      cy.contains('Submit').click()
-        .then(() => {
-            expect(stub.getCall(0)).to.be.calledWith('Thank you for contacting Mental Health Match')      
-    })  
-    })
+      cy.get('iframe')
+        .first()
+        .its('0.contentDocument.body')
+        .should('not.be.undefined')
+        .and('not.be.empty')
+        .then(cy.wrap)
+        .find('#recaptcha-anchor')
+        .should('be.visible')
+        .click();
+          cy.contains('Submit').click()
+            .then(() => {
+                expect(stub.getCall(0)).to.be.calledWith('Thank you for contacting Mental Health Match')      
+        })  
+        })
   });
   
