@@ -7,7 +7,7 @@ describe("Consumer Workflow Tests", () => {
       cy.visit(Cypress.env('baseUrl'));
     });
   
-    it("Consumer Find Therpist - Desktop #smoke", () => {
+    it.only("Consumer Find Therpist - Desktop #smoke", () => {
       cy.viewport('macbook-13')
       //Click "Find Therapists"
       cy.get('.input-group-sm > .input-group-append > .input-group-text > strong').click();
@@ -72,8 +72,8 @@ describe("Consumer Workflow Tests", () => {
       cy.get('#search-costs-match').click();
 
       //Click View PR
-      cy.get('#\\36 68 > .p-0 > app-therapist-card > .d-md-block > div.row > .col-md-4 > .text-center > .mb-2').click();
-      cy.get('.px-5').click();
+      cy.contains('VIEW PROFILE').first().click({force:true});
+      cy.contains('CONTACT').first().click();
       cy.get('#nameC').clear();
       cy.get('#nameC').type('Test Consumer');
       cy.get(':nth-child(2) > .col-md-8 > .form-group > .form-control').clear();
