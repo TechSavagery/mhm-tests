@@ -1,0 +1,16 @@
+{
+    "ViewPorts": [
+        {
+            "name": "desktop",
+            "value": "macbook-13"
+        },
+        {
+            "name": "tablet",
+            "value": "ipad-2"
+        },
+        {
+            "name": "phone",
+            "value": "iphone-8"
+        }
+    ]
+}
