@@ -25,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress Tests Firefox
-        uses: cypress-io/github-action@v2.3.6
+        uses: cypress-io/github-action@v2.2.7
         with:
           browser: firefox
           headless: true
