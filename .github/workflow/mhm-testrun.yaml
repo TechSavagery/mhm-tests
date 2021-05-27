@@ -1,0 +1,17 @@
+name: MHM Automated Tests
+on: [push]
+jobs:
+  qa-environment-tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Cypress Tests 
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          spec: |
+            cypress/integration/workflows/**/*spec.js
+            cypress/integration/pages/**/*spec.js
+          config-file: cypress/env/qa.json
