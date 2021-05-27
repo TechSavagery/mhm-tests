@@ -1,12 +1,12 @@
 name: MHM Automated Tests
 on: [push]
 jobs:
-  qa-environment-tests:
+  qa-environment-tests-chrome:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run Cypress Tests 
+      - name: Run Cypress Tests Chrome
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
@@ -15,3 +15,22 @@ jobs:
             cypress/integration/workflows/**/*spec.js
             cypress/integration/pages/**/*spec.js
           config-file: cypress/env/qa.json
+          config: video=false
+  qa-environment-tests-firefox:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Cypress Tests Firefox
+        uses: cypress-io/github-action@v2
+        with:
+          browser: firefox
+          headless: true
+          spec: |
+            cypress/integration/workflows/**/*spec.js
+            cypress/integration/pages/**/*spec.js
+          config-file: cypress/env/qa.json
+          config: video=false
