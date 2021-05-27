@@ -15,22 +15,16 @@ jobs:
             cypress/integration/workflows/**/*spec.js
             cypress/integration/pages/**/*spec.js
           config-file: cypress/env/qa.json
-          config: video=false
-  qa-environment-tests-firefox:
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node13.6.0-chrome80-ff72
-      options: --user 1001
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run Cypress Tests Firefox
-        uses: cypress-io/github-action@v2
+          config: video=true
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v1
+        if: failure()
         with:
-          browser: firefox
-          headless: true
-          spec: |
-            cypress/integration/workflows/**/*spec.js
-            cypress/integration/pages/**/*spec.js
-          config-file: cypress/env/qa.json
-          config: video=false
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - name: Upload Videos
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos

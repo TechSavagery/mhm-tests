@@ -128,6 +128,47 @@ ci: runs headlessly so you can leverage this in builds
 `npm run test:monitor:prod`  
 `npm run test:ci:prod`  
 
+## CI via GitHub actions:
+
+```
+name: MHM Automated Tests
+on: [push]
+jobs:
+  qa-environment-tests-chrome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Cypress Tests Chrome
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          spec: |
+            cypress/integration/workflows/**/*spec.js
+            cypress/integration/pages/**/*spec.js
+          config-file: cypress/env/qa.json
+          config: video=false
+  qa-environment-tests-firefox:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node13.6.0-chrome80-ff72
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Cypress Tests Firefox
+        uses: cypress-io/github-action@v2
+        with:
+          browser: firefox
+          headless: true
+          spec: |
+            cypress/integration/workflows/**/*spec.js
+            cypress/integration/pages/**/*spec.js
+          config-file: cypress/env/qa.json
+          config: video=false
+```
+
 <!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_-->
