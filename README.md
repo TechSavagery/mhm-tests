@@ -129,7 +129,7 @@ ci: runs headlessly so you can leverage this in builds
 `npm run test:ci:prod`  
 
 ## CI via GitHub actions:
-
+### Base GitHub Actions Yaml 
 ```
 name: MHM Automated Tests
 on: [push]
@@ -168,6 +168,9 @@ jobs:
           config-file: cypress/env/qa.json
           config: video=false
 ```
+
+### Adding Test Execution Report via Github Pages
+https://medium.com/swlh/publish-your-cypress-test-report-with-github-actions-47248788713a
 
 <!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
