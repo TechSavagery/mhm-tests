@@ -8,5 +8,9 @@
         "email": "ladellerby@techsavagery.net",
         "password": "test1234!"
       }
+    },
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
     }
   }

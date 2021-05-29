@@ -8,5 +8,9 @@
         "email": "andrew+ladell.erby@mentalhealthmatch.com",
         "password": "test1234!"
       }
+    },
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
     }
   }

@@ -170,7 +170,34 @@ jobs:
 ```
 
 ### Adding Test Execution Report via Github Pages
+
+The following will run this workflow:
+
+1. Copy Videos to public directory for use in test report generation
+2. Merge individual spec file reports into one report 
+3. Generate html report 
+4. Deploy to github pages
+
+For detailed config and dependencies setup, please refer to the following article below:
 https://medium.com/swlh/publish-your-cypress-test-report-with-github-actions-47248788713a
+
+```
+- name: Copy Videos for Test Report
+        run: |
+          mkdir public
+          cp -r cypress/videos public/videos
+      - name: Merge Test Result Files
+        run: npm run report:merge
+      - name: Generate HTML report
+        run: npm run report:generate
+      - name: Deploy Cypress Test Report 
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+```
 
 <!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
