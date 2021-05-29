@@ -28,3 +28,18 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+      - name: Copy Videos for Test Report
+        run: |
+          mkdir public
+          cp -r cypress/videos public/videos
+      - name: Merge Test Result Files
+        run: npm run report:merge
+      - name: Generate HTML report
+        run: npm run report:generate
+      - name: Deploy Cypress Test Report 
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

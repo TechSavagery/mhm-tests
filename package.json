@@ -6,7 +6,12 @@
   "dependencies": {},
   "devDependencies": {
     "cypress": "^7.4.0",
-    "cypress-audit": "^0.3.0"
+    "cypress-audit": "^0.3.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^8.4.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +23,9 @@
     "test:ci:qa": "cypress run --headless --browser chrome --config-file cypress/env/qa.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js && cypress run --headless --browser firefox --config-file cypress/env/qa.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js",
     "test:interactive:prod": "cypress open --config-file cypress/env/prod.json",
     "test:monitor:prod": "cypress run --headed --browser chrome --config-file cypress/env/prod.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js && cypress run --headed --browser firefox --config-file cypress/env/prod.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js",
-    "test:ci:prod": "cypress run --headless --browser chrome --config-file cypress/env/prod.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js && cypress run --headless --browser firefox --config-file cypress/env/prod.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js"
+    "test:ci:prod": "cypress run --headless --browser chrome --config-file cypress/env/prod.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js && cypress run --headless --browser firefox --config-file cypress/env/prod.json --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js",
+    "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
+    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
   },
   "repository": {
     "type": "git",
