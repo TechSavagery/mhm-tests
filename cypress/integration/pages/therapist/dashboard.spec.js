@@ -11,11 +11,10 @@ describe("Therapist/Dashboard Page Tests", () => {
       cy.viewport('macbook-13')
 
       //Act
-      cy.get("#inputEmail").clear();
-      cy.get("#inputEmail").type(Cypress.env('therapist-subscribed').email);
-      cy.get("#inputPassword").clear();
-      cy.get("#inputPassword").type(Cypress.env('therapist-subscribed').password);
-      cy.get(".btn").click();
+      cy.therapistLogin(
+        Cypress.env("therapist-subscribed").email,
+        Cypress.env("therapist-subscribed").password
+      );
 
       //Assert
       cy.url().should('include', '/dashboard')

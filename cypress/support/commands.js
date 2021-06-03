@@ -24,3 +24,12 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "cypress-audit/commands";
+
+Cypress.Commands.add('therapistLogin', (email, password)=>{
+    cy.visit(Cypress.env('baseUrl') + 'login')
+    cy.get("#inputEmail").clear();
+    cy.get("#inputEmail").type(email);
+    cy.get("#inputPassword").clear();
+    cy.get("#inputPassword").type(password);
+    cy.get(".btn").click();
+  })
