@@ -1,0 +1,14 @@
+[
+    {
+       "screenSize":"macbook-13",
+       "name":"Desktop"
+    },
+    {
+       "screenSize":"ipad-2",
+       "name":"Tablet"
+    },
+    {
+       "screenSize":"iphone-8",
+       "name":"Phone"
+    }
+ ]

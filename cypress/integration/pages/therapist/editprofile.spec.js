@@ -85,34 +85,19 @@ describe("Therapist/EditProfile Page No Authentication Tests", () => {
     cy.visit(Cypress.env("baseUrl"));
   });
 
-  it("Redirects To /Login - Desktop #smoke", () => {
-    //Arrange
-    cy.viewport("macbook-13");
+  it(`Redirects To /Login #smoke`, () => {
+    cy.fixture("viewports").then((viewports) => {
+      viewports.forEach((viewport, index) => {
+        //Arrange
+        cy.log(`Verifying ${viewport.name}`);
+        cy.viewport(viewport.screenSize);
 
-    //Act
-    cy.visit(Cypress.env("baseUrl") + "therapist/editprofile");
+        //Act
+        cy.visit(Cypress.env("baseUrl") + "therapist/editprofile");
 
-    //Assert
-    cy.location("pathname").should("eq", "/login");
-  });
-  it("Redirects To /Login - Tablet #smoke", () => {
-    //Arrange
-    cy.viewport("ipad-2");
-
-    //Act
-    cy.visit(Cypress.env("baseUrl") + "therapist/editprofile");
-
-    //Assert
-    cy.location("pathname").should("eq", "/login");
-  });
-  it("Redirects To /Login - Mobile #smoke", () => {
-    //Arrange
-    cy.viewport("iphone-8");
-
-    //Act
-    cy.visit(Cypress.env("baseUrl") + "therapist/editprofile");
-
-    //Assert
-    cy.location("pathname").should("eq", "/login");
+        //Assert
+        cy.location("pathname").should("eq", "/login");
+      });
+    });
   });
 });
