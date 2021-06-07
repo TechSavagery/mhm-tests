@@ -31,7 +31,7 @@ describe("Therapist/Dashboard Page Tests", () => {
 
       //Dashboard Widgets
       cy.contains('have seen you as a match.');
-      cy.contains('has viewed your full profile.');
+      cy.contains('viewed your full profile.');
       cy.contains('have emailed you.');
       cy.contains('Share with a colleague.');
       cy.contains('Update your availability.');

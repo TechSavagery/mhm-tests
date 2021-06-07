@@ -25,7 +25,7 @@ describe("Therapist/Search Page Tests", () => {
     cy.contains("My Favorites", { matchCase: false });
     cy.contains("Zip Code", { matchCase: false });
     cy.contains("State", { matchCase: false });
-    cy.get(".btn-outline-primary").should("have.length", 2);
+    cy.get(".btn-outline-primary").should("have.length.at.least", 2);
   });
   it("Therapist/Search Page Loads Tablet #smoke", () => {
     cy.viewport("ipad-2");
@@ -42,7 +42,7 @@ describe("Therapist/Search Page Tests", () => {
     cy.contains("My Favorites", { matchCase: false });
     cy.contains("Zip Code", { matchCase: false });
     cy.contains("State", { matchCase: false });
-    cy.get(".btn-outline-primary").should("have.length", 2);
+    cy.get(".btn-outline-primary").should("have.length.at.least", 2);
   });
 
   it("Therapist/Search Page Loads Mobile #smoke", () => {
@@ -61,7 +61,7 @@ describe("Therapist/Search Page Tests", () => {
     cy.contains("My Favorites", { matchCase: false });
     cy.contains("Zip Code", { matchCase: false });
     cy.contains("State", { matchCase: false });
-    cy.get(".btn-outline-primary").should("have.length", 2);
+    cy.get(".btn-outline-primary").should("have.length.at.least", 2);
   });
 
   it("Therapist/Search Start Search Button Navigates to Search Results Component", () => {

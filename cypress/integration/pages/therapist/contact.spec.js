@@ -67,9 +67,9 @@ describe("Therapist/Contact Page Tests", () => {
 
     //Act
     cy.get(".fa-envelope").click();
-    cy.get('[name="name"]').clear().type("Automated Tests");
-    cy.get('[name="email"]').clear().type("test@test.com");
-    cy.get("#comment").clear().type("test@test.com");
+    cy.get('[name="name"]').clear({force: true}).type("Automated Tests");
+    cy.get('[name="email"]').clear({force: true}).type("test@test.com");
+    cy.get("#comment").clear({force: true}).type("test@test.com");
     cy.contains("Submit", { matchCase: false }).click({ force: true });
 
     //Assert
