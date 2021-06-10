@@ -39,7 +39,7 @@ describe("Therapist Therapist Search Tests", () => {
     cy.visit(Cypress.env("baseUrl"));
   });
 
-  it.only("Search By Zip Code Returns Results #smoke", () => {
+  it("Search By Zip Code Returns Results #smoke", () => {
     //Arrange
     cy.viewport("macbook-13");
     //Login
@@ -54,14 +54,19 @@ describe("Therapist Therapist Search Tests", () => {
     });
     cy.get('[placeholder="e.g. 77019"]').click().type("77019");
     cy.contains("Start Search").first().click();
+    cy.wait(3000)
+    cy.contains('Show More').click();
+
 
     //Assert
     cy.url().should("include", "/therapist/search");
-    cy.contains("Contact", { matchCase: false })
+    cy.contains("Email", { matchCase: false })
       .its("length")
-      .should("be.lte", 5);
+      .should("be.lte", 5)
     cy.contains("Showing 1 - 5", { matchCase: false })
       .its("length")
-      .should("be.eq", 1);
+      .should("be.eq", 1)
+    cy.contains('Hide Full Profile')
+    cy.contains('Show Less')
   });
 });
