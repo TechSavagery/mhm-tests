@@ -70,6 +70,8 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+## Latest Test Run: 
+https://techsavagery.github.io/mhm-tests/
 
 ## About The Project
 
@@ -198,6 +200,9 @@ https://medium.com/swlh/publish-your-cypress-test-report-with-github-actions-472
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
 ```
+
+### Increasing Quality of Screenshots and Videos 
+https://www.cypress.io/blog/2021/03/01/generate-high-resolution-videos-and-screenshots/
 
 <!--Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 

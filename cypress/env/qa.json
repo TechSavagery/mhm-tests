@@ -7,6 +7,10 @@
       "therapist-subscribed": {
         "email": "andrew+ladell.erby@mentalhealthmatch.com",
         "password": "test1234!"
+      },
+      "contact-form":{
+        "link" : "therapist-profile/texas/houston/crystal-collier",
+        "name" : "CRYSTAL"
       }
     },
     "reporter": "cypress-multi-reporters",

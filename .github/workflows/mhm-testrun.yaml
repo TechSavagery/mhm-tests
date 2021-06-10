@@ -43,3 +43,6 @@ jobs:
           publish_dir: ./public
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+      - name: Report Url 
+        run: echo "https://techsavagery.github.io/mhm-tests/"
+        shell: bash

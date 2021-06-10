@@ -7,6 +7,10 @@
     "therapist-subscribed": {
       "email": "andrew+test-dev-therpist-subscribed@mentalhealthmatch.com",
       "password": "test1234!"
+    },
+    "contact-form":{
+      "link" : "/therapist-profile/texas/houston/crystal-collier",
+      "name" : "CRYSTAL"
     }
   },
   "reporter": "cypress-multi-reporters",
