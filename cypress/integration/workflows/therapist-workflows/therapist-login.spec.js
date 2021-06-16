@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 describe("Therapist Login Tests", () => {
   beforeEach(() => {
     cy.window().then((win) => {

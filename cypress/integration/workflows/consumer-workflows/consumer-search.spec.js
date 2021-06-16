@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe("Consumer Workflow Tests", () => {
+describe("Consumer Search Tests", () => {
   beforeEach(() => {
     cy.window().then((win) => {
       win.sessionStorage.clear();
@@ -201,7 +201,7 @@ describe("Consumer Workflow Tests", () => {
     cy.contains("CLOSE").click();
   });
 
-  it("Consumer Find Therpist Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
+  it.only("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
     //Arrange
     const schizophreniaList = [
       "Catatonia",
@@ -215,65 +215,58 @@ describe("Consumer Workflow Tests", () => {
     cy.viewport("macbook-13");
 
     //Act
-    //Click "Find Therapists"
+    cy.log('Navigate to Therapist Search Page')
     cy.get(
       ".input-group-sm > .input-group-append > .input-group-text > strong"
     ).click();
     cy.get(".form-control").clear();
 
-    //Enter Zip Code
+    cy.log('Enter Zip Code + Agree To TOS + Click Get Matched')
     cy.get(".form-control").type("77019");
 
-    // Agree to Privacy Policy & Terms Of Service
     cy.get(".ng-untouched").check();
 
-    //Click Get Matched
     cy.get(
       ":nth-child(3) > .col-md-8 > .ng-star-inserted > #search-findmatch"
     ).click();
 
-    //Step 1
-    //Select "Do you want therapy with another person?" option
+    cy.log('Step 1: Select "Do you want therapy with another person?" + Age. Then Click "Next"')
     cy.get(":nth-child(1) > .unselected-option").click();
 
-    //Enter Age
     cy.get(":nth-child(3) > .col-md-8 > .form-control").click();
     cy.get(":nth-child(3) > .col-md-8 > .form-control").click();
     cy.get(":nth-child(3) > .col-md-8 > .form-control").clear();
     cy.get(":nth-child(3) > .col-md-8 > .form-control").type("25");
-    //Click Next
+
     cy.get("#search-about-next").click();
 
-    //Step 2
-    //Select Expertise
+    cy.log('Step 2: Select Expertise. Then Click "Next"')
     cy.contains("A disorder I want to test for or treat").click();
-    //Click Next
+
     cy.get("#search-goals-next").click();
-    //Select Disorder Type
+
+    cy.log('Step 2: Select Disorder. Then Click "Next"')
     cy.contains("Schizophrenia").click();
-    //Click Next
+
     cy.get("#search-goals-details-next").click();
 
-    //Step 3
-    //Click Next
+    cy.log('Step 3: Keep Default Goals. Then Click "Next"')
     cy.get("#search-approaches-next").click();
 
-    //Step 4
-    //Click Next
+    cy.log('Step 4: Keep Default Approaches. Then Click "Next"')
     cy.get("#search-traits-next").click();
 
-    //Step 5
-    //Click "Meet Your Matches" button
+    cy.log('Step 5: Click "Meet Your Matches"')
     cy.contains("Meet your matches").click();
 
     //Assert
-    //Check all Focus Area <div>'s and validate they contain at least one Therapist Specialty
+    cy.log('Validate each therapist contains one of the disorders from list')
     cy.get(".splitList").each(($el, index, $list) => {
       cy.wrap($el).contains(regex);
     });
   });
 
-  it("Consumer Find Therpist Difficult Searcher - Psychosis- Desktop #smoke", () => {
+  it("Consumer Match Search - Difficult Searcher - Psychosis- Desktop #smoke", () => {
     //Arrange
     const disorderList = [
       "Catatonia",
@@ -354,8 +347,7 @@ describe("Consumer Workflow Tests", () => {
     });
   });
 
-  
-  it.only("Consumer Find Therpist Difficult Searcher - Suicidal - Desktop #smoke", () => {
+  it("Consumer Match Search - Difficult Searcher - Suicidal - Desktop #smoke", () => {
     //Arrange
     const disorderList = [
       "Life Crisis",
