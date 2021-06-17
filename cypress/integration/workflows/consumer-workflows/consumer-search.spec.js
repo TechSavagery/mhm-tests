@@ -201,7 +201,7 @@ describe("Consumer Search Tests", () => {
     cy.contains("CLOSE").click();
   });
 
-  it.only("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
+  it("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
     //Arrange
     const schizophreniaList = [
       "Catatonia",

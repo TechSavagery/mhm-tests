@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "cypress-audit/commands";
+import '@testing-library/cypress/add-commands';
 
 Cypress.Commands.add('therapistLogin', (email, password)=>{
     cy.visit(Cypress.env('baseUrl') + 'login')
