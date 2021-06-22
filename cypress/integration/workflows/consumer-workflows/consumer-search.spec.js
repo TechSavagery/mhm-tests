@@ -201,6 +201,50 @@ describe("Consumer Search Tests", () => {
     cy.contains("CLOSE").click();
   });
 
+  it("Consumer Match Filters - Location - In-Person Only", () =>{
+    //Arrange 
+    cy.viewport("macbook-13");
+    cy.consumerMatchSearch('77019', 'How I feel')
+
+    //Act
+    cy.get('#therapy-type-filter').as('contact-method').select('Offers In-Person');
+
+    //Assert
+    cy.wait(1000)
+    cy.get('img[src*="remote-therapy-only"]').should('not.exist')
+    cy.get('img[src*="api.mapbox"]').should('have.length.gte',5) 
+   })
+
+  it("Consumer Match Filters - Location - Online Only", () =>{
+    //Arrange 
+    cy.viewport("macbook-13");
+    cy.consumerMatchSearch('77019', 'How I feel')
+
+    //Act
+    cy.get('#therapy-type-filter').as('contact-method').select('Offers Online');
+
+    //Assert
+    cy.wait(1000)
+    cy.get('img[src*="remote-therapy-only"]').should('have.length.gte', 5)
+  })
+
+  it("Consumer Match Filters - Location - Both", () =>{
+    //Arrange 
+    cy.viewport("macbook-13");
+    cy.consumerMatchSearch('77019', 'How I feel')
+
+    //Act
+    cy.get('#therapy-type-filter').as('contact-method').select('Online or In-Person');
+
+    //Assert
+    cy.wait(1000)
+    cy.get('img[src*="remote-therapy-only"]').should('exist')
+    cy.get('img[src*="api.mapbox"]').should('exist') 
+
+  })
+
+
+
   it("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
     //Arrange
     const schizophreniaList = [
