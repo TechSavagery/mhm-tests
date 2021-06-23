@@ -93,6 +93,11 @@ describe("Consumer Search Tests", () => {
     //Click "Meet Your Matches" button
     cy.get("#search-costs-match").click();
 
+    //Page Assertions
+    cy.get('#therapy-type-filter').should('exist')
+    cy.get('#waitlist-filter').should('exist')
+    cy.get('#results-sort-key').should('exist')
+
     //Click View PR
     cy.contains("VIEW PROFILE").first().click({ force: true });
     cy.contains("CONTACT").first().click();
@@ -143,6 +148,11 @@ describe("Consumer Search Tests", () => {
     cy.contains("ALLEGIAN").click();
     cy.contains("Meet your matches").click();
 
+    //Page Assertions
+    cy.get('#therapy-type-filter').should('exist')
+    cy.get('#waitlist-filter').should('exist')
+    cy.get('#results-sort-key').should('exist')
+
     //Contact Therapist
     cy.contains("VIEW PROFILE").eq(0).click({ force: true });
     cy.contains("CONTACT").first().click();
@@ -189,6 +199,11 @@ describe("Consumer Search Tests", () => {
     cy.contains("ALLEGIAN").click();
     cy.contains("Meet your matches").click();
 
+    //Page Assertions
+    cy.get('#therapy-type-filter').should('exist')
+    cy.get('#waitlist-filter').should('exist')
+    cy.get('#results-sort-key').should('exist')
+
     //Contact Therapist
     cy.contains("VIEW PROFILE").eq(0).click({ force: true });
     cy.contains("CONTACT").first().click();
@@ -210,8 +225,7 @@ describe("Consumer Search Tests", () => {
     cy.get('#therapy-type-filter').as('contact-method').select('Offers In-Person');
 
     //Assert
-    cy.wait(1000)
-    cy.get('img[src*="remote-therapy-only"]').should('not.exist')
+    cy.wait(1500)
     cy.get('img[src*="api.mapbox"]').should('have.length.gte',5) 
    })
 
@@ -224,8 +238,9 @@ describe("Consumer Search Tests", () => {
     cy.get('#therapy-type-filter').as('contact-method').select('Offers Online');
 
     //Assert
-    cy.wait(1000)
-    cy.get('img[src*="remote-therapy-only"]').should('have.length.gte', 5)
+    cy.wait(1500)
+    cy.get('img[src*="remote-therapy-only"]').should('have.length.gte', 1)
+    cy.get('img[src*="api.mapbox"]').should('exist') 
   })
 
   it("Consumer Match Filters - Location - Both", () =>{
@@ -237,7 +252,7 @@ describe("Consumer Search Tests", () => {
     cy.get('#therapy-type-filter').as('contact-method').select('Online or In-Person');
 
     //Assert
-    cy.wait(1000)
+    cy.wait(1500)
     cy.get('img[src*="remote-therapy-only"]').should('exist')
     cy.get('img[src*="api.mapbox"]').should('exist') 
 

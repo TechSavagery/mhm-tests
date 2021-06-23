@@ -76,5 +76,10 @@ Cypress.Commands.add('therapistLogin', (email, password)=>{
     cy.get("#search-traits-next").click();
 
     cy.log('Step 5: Click "Meet Your Matches"')
-    cy.contains("Meet your matches").click();
+    cy.contains("Meet your matches").click()
+    cy.wait(1500)
+
+    for(let n = 0; n < 7; n ++){
+      cy.contains('LOAD MORE THERAPISTS').click()
+    }
   })
