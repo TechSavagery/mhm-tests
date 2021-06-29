@@ -242,7 +242,7 @@ describe("Home Page Tests", () => {
           expect(response.status).to.eq(200);
         });
       }
-    ).should('have.length', 5);;
+    ).should('have.length', 5);
     cy.viewport("iphone-8");
     cy.get(".list-group-item.bg-transparent.border-0 > a").each(
       (article) => {
