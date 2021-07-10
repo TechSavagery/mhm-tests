@@ -20,7 +20,7 @@ describe("Therapist/ViewProfile Page Tests", () => {
 
     //Assert
     cy.location("pathname").should("eq", "/therapist/viewprofile");
-    cy.get('.sebm-google-map-container-inner').should('be.visible')
+    cy.get('google-map').should('be.visible')
     cy.get('.profile-user-img-profile').should('be.visible')
     cy.contains("About Me", { matchCase: false });
     cy.contains("View Profile", { matchCase: false });
@@ -39,7 +39,7 @@ describe("Therapist/ViewProfile Page Tests", () => {
 
     //Assert
     cy.location("pathname").should("eq", "/therapist/viewprofile");
-    cy.get('.sebm-google-map-container-inner').should('be.visible')
+    cy.get('google-map').should('be.visible')
     cy.get('.profile-user-img-profile').should('be.visible')
     cy.contains("About Me", { matchCase: false });
     cy.contains("View Profile", { matchCase: false });
@@ -60,7 +60,7 @@ describe("Therapist/ViewProfile Page Tests", () => {
 
     //Assert
     cy.location("pathname").should("eq", "/therapist/viewprofile");
-    cy.get('.sebm-google-map-container-inner').should('be.visible')
+    cy.get('google-map').should('be.visible')
     cy.get('.profile-user-img-profile').should('be.visible')
     cy.contains("About Me", { matchCase: false });
     cy.contains("View Profile", { matchCase: false });

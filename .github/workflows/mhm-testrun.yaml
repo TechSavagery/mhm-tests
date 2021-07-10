@@ -1,5 +1,7 @@
 name: MHM Automated Tests
 on: [push]
+  schedule:
+    - cron:  '0 6 * * *'
 jobs:
   qa-environment-tests-chrome:
     runs-on: ubuntu-latest
