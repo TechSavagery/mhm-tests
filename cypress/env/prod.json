@@ -1,6 +1,7 @@
 {
   "experimentalStudio": true,
   "defaultCommandTimeout": 10000,
+  "retries": 3,
     "env": {
       "baseUrl": "https://mentalhealthmatch.com/",
       "integrationFolder": "cypress/integration",

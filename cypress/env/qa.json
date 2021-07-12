@@ -1,5 +1,6 @@
 {
   "experimentalStudio": true,
+  "retries": 3,
   "defaultCommandTimeout": 10000,
     "env": {
       "baseUrl": "https://qa.mentalhealthmatch.com/",

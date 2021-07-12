@@ -18,23 +18,12 @@ jobs:
             cypress/integration/workflows/**/*spec.js
             cypress/integration/pages/**/*spec.js
           config-file: cypress/env/qa.json
-          config: video=true
       - name: Upload Screenshots
         uses: actions/upload-artifact@v1
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-      - name: Upload Videos
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
-      - name: Copy Videos for Test Report
-        run: |
-          mkdir public
-          cp -r cypress/videos public/videos
       - name: Merge Test Result Files
         run: npm run report:merge
       - name: Generate HTML report
