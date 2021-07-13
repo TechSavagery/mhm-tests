@@ -94,9 +94,9 @@ describe("Consumer Search Tests", () => {
     cy.get("#search-costs-match").click();
 
     //Page Assertions
-    cy.get('#therapy-type-filter').should('exist')
-    cy.get('#waitlist-filter').should('exist')
-    cy.get('#results-sort-key').should('exist')
+    cy.get("#therapy-type-filter").should("exist");
+    cy.get("#waitlist-filter").should("exist");
+    cy.get("#results-sort-key").should("exist");
 
     //Click View PR
     cy.contains("VIEW PROFILE").first().click({ force: true });
@@ -150,9 +150,9 @@ describe("Consumer Search Tests", () => {
     cy.contains("Meet your matches").click();
 
     //Page Assertions
-    cy.get('#therapy-type-filter').should('exist')
-    cy.get('#waitlist-filter').should('exist')
-    cy.get('#results-sort-key').should('exist')
+    cy.get("#therapy-type-filter").should("exist");
+    cy.get("#waitlist-filter").should("exist");
+    cy.get("#results-sort-key").should("exist");
 
     //Contact Therapist
     cy.contains("VIEW PROFILE").first().click({ force: true });
@@ -206,9 +206,9 @@ describe("Consumer Search Tests", () => {
     cy.contains("Meet your matches").click();
 
     //Page Assertions
-    cy.get('#therapy-type-filter').should('exist')
-    cy.get('#waitlist-filter').should('exist')
-    cy.get('#results-sort-key').should('exist')
+    cy.get("#therapy-type-filter").should("exist");
+    cy.get("#waitlist-filter").should("exist");
+    cy.get("#results-sort-key").should("exist");
 
     //Contact Therapist
     cy.contains("VIEW PROFILE").first().click({ force: true });
@@ -227,49 +227,50 @@ describe("Consumer Search Tests", () => {
     cy.contains("CLOSE").click();
   });
 
-  it("Consumer Match Filters - Location - In-Person Only", () =>{
-    //Arrange 
+  it("Consumer Match Filters - Location - In-Person Only", () => {
+    //Arrange
     cy.viewport("macbook-13");
-    cy.consumerMatchSearch('77019', 'How I feel')
+    cy.consumerMatchSearch("77019", "How I feel");
 
     //Act
-    cy.get('#therapy-type-filter').as('contact-method').select('Offers In-Person');
+    cy.get("#therapy-type-filter")
+      .as("contact-method")
+      .select("Offers In-Person");
 
     //Assert
-    cy.wait(1500)
-    cy.get('img[src*="api.mapbox"]').should('have.length.gte',5) 
-   })
+    cy.wait(1500);
+    cy.get('img[src*="api.mapbox"]').should("have.length.gte", 5);
+  });
 
-  it("Consumer Match Filters - Location - Online Only", () =>{
-    //Arrange 
+  it("Consumer Match Filters - Location - Online Only", () => {
+    //Arrange
     cy.viewport("macbook-13");
-    cy.consumerMatchSearch('77019', 'How I feel')
+    cy.consumerMatchSearch("77019", "How I feel");
 
     //Act
-    cy.get('#therapy-type-filter').as('contact-method').select('Offers Online');
+    cy.get("#therapy-type-filter").as("contact-method").select("Offers Online");
 
     //Assert
-    cy.wait(1500)
-    cy.get('img[src*="remote-therapy-only"]').should('have.length.gte', 1)
-    cy.get('img[src*="api.mapbox"]').should('exist') 
-  })
+    cy.wait(1500);
+    cy.get('img[src*="remote-therapy-only"]').should("have.length.gte", 1);
+    cy.get('img[src*="api.mapbox"]').should("exist");
+  });
 
-  it("Consumer Match Filters - Location - Both", () =>{
-    //Arrange 
+  it("Consumer Match Filters - Location - Both", () => {
+    //Arrange
     cy.viewport("macbook-13");
-    cy.consumerMatchSearch('77019', 'How I feel')
+    cy.consumerMatchSearch("77019", "How I feel");
 
     //Act
-    cy.get('#therapy-type-filter').as('contact-method').select('Online or In-Person');
+    cy.get("#therapy-type-filter")
+      .as("contact-method")
+      .select("Online or In-Person");
 
     //Assert
-    cy.wait(1500)
-    cy.get('img[src*="remote-therapy-only"]').should('exist')
-    cy.get('img[src*="api.mapbox"]').should('exist') 
-
-  })
-
-
+    cy.wait(1500);
+    cy.get('img[src*="remote-therapy-only"]').should("exist");
+    cy.get('img[src*="api.mapbox"]').should("exist");
+  });
 
   it("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
     //Arrange
@@ -285,13 +286,13 @@ describe("Consumer Search Tests", () => {
     cy.viewport("macbook-13");
 
     //Act
-    cy.log('Navigate to Therapist Search Page')
+    cy.log("Navigate to Therapist Search Page");
     cy.get(
       ".input-group-sm > .input-group-append > .input-group-text > strong"
     ).click();
     cy.get(".form-control").clear();
 
-    cy.log('Enter Zip Code + Agree To TOS + Click Get Matched')
+    cy.log("Enter Zip Code + Agree To TOS + Click Get Matched");
     cy.get(".form-control").type("77019");
 
     cy.get(".ng-untouched").check();
@@ -300,7 +301,9 @@ describe("Consumer Search Tests", () => {
       ":nth-child(3) > .col-md-8 > .ng-star-inserted > #search-findmatch"
     ).click();
 
-    cy.log('Step 1: Select "Do you want therapy with another person?" + Age. Then Click "Next"')
+    cy.log(
+      'Step 1: Select "Do you want therapy with another person?" + Age. Then Click "Next"'
+    );
     cy.get(":nth-child(1) > .unselected-option").click();
 
     cy.get(":nth-child(3) > .col-md-8 > .form-control").click();
@@ -310,27 +313,27 @@ describe("Consumer Search Tests", () => {
 
     cy.get("#search-about-next").click();
 
-    cy.log('Step 2: Select Expertise. Then Click "Next"')
+    cy.log('Step 2: Select Expertise. Then Click "Next"');
     cy.contains("A disorder I want to test for or treat").click();
 
     cy.get("#search-goals-next").click();
 
-    cy.log('Step 2: Select Disorder. Then Click "Next"')
+    cy.log('Step 2: Select Disorder. Then Click "Next"');
     cy.contains("Schizophrenia").click();
 
     cy.get("#search-goals-details-next").click();
 
-    cy.log('Step 3: Keep Default Goals. Then Click "Next"')
+    cy.log('Step 3: Keep Default Goals. Then Click "Next"');
     cy.get("#search-approaches-next").click();
 
-    cy.log('Step 4: Keep Default Approaches. Then Click "Next"')
+    cy.log('Step 4: Keep Default Approaches. Then Click "Next"');
     cy.get("#search-traits-next").click();
 
-    cy.log('Step 5: Click "Meet Your Matches"')
+    cy.log('Step 5: Click "Meet Your Matches"');
     cy.contains("Meet your matches").click();
 
     //Assert
-    cy.log('Validate each therapist contains one of the disorders from list')
+    cy.log("Validate each therapist contains one of the disorders from list");
     cy.get(".splitList").each(($el, index, $list) => {
       cy.wrap($el).contains(regex);
     });
@@ -409,11 +412,13 @@ describe("Consumer Search Tests", () => {
 
     //Assert
     //Check all Focus Area <div>'s and validate they contain at least one Therapist Specialty
-    cy.wait(1500)
+    cy.wait(1500);
     cy.get(".splitList").each(($el, index, $list) => {
-      cy.wrap($el).scrollIntoView().then(($el) =>{
-        cy.get($el).contains(regex)
-      })
+      cy.wrap($el)
+        .scrollIntoView()
+        .then(($el) => {
+          cy.get($el).contains(regex);
+        });
     });
   });
 
@@ -427,7 +432,7 @@ describe("Consumer Search Tests", () => {
       "Crisis",
       "Suicidality",
       "Crisis Intervention",
-      "Suicide"
+      "Suicide",
     ];
     const regex = new RegExp(`${disorderList.join("|")}`, "g");
     cy.viewport("macbook-13");
@@ -469,7 +474,7 @@ describe("Consumer Search Tests", () => {
     cy.get("#search-goals-next").click();
     //Select Disorder Type
     cy.contains("Suicidal").click();
-    cy.contains('I Understand').click()
+    cy.contains("I Understand").click();
     //Click Next
     cy.get("#search-goals-details-next").click();
 
@@ -487,11 +492,39 @@ describe("Consumer Search Tests", () => {
 
     //Assert
     //Check all Focus Area <div>'s and validate they contain at least one Therapist Specialty
-    cy.wait(5000)
+    cy.wait(5000);
     cy.get(".splitList").each(($el, index, $list) => {
-      cy.wrap($el).scrollIntoView().then(($el) =>{
-        cy.get($el).contains(regex)
-      })
+      cy.wrap($el)
+        .scrollIntoView()
+        .then(($el) => {
+          cy.get($el).contains(regex);
+        });
     });
+  });
+
+  it.only("Contact Form Email Domain Suggestion", () => {
+    //Arrange
+    cy.viewport("macbook-13");
+    cy.consumerMatchSearch("77019", "How I feel");
+    cy.wait(5000);
+
+    //Act
+    cy.get('a[href*="therapist-profile"]').first().click({ force: true });
+    cy.get(".ga-contact-modal-button").first().click();
+
+    cy.wait(500);
+    cy.get('[name="name"]').as("name-field").clear().type("name");
+    cy.get('[name="email"]')
+      .as("email-field")
+      .clear()
+      .type("funkyemail897456123@gmail.com");
+    cy.get('[name="phone"]').as("phone-field").clear().type("1234567890");
+    cy.get("select").select("In the next week");
+    cy.get('input[value="Email"]').click()
+    cy.get('textarea[placeholder="Optional"]').click();
+    cy.contains("SEND EMAIL TO ").click();
+
+    //Assert
+    cy.contains("The email you entered is not valid.");
   });
 });
