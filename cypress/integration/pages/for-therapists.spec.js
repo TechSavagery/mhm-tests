@@ -17,7 +17,7 @@ describe("For Therapist Page", () => {
         cy.contains('JOIN AS A THERAPIST');
 
         cy.viewport('ipad-2');
-        cy.get('a[href*="/register/therapist"]').should(($ctas) =>{
+        cy.get('a[href*="/therapist/register"]').should(($ctas) =>{
           expect($ctas).length.to.be.greaterThan(3);
         });
         cy.get('#SIT').click();
@@ -27,7 +27,7 @@ describe("For Therapist Page", () => {
         cy.contains('LOGIN');
         cy.contains('JOIN AS A THERAPIST');
         //cy.viewport('iphone-8');
-                cy.get('a[href*="/register/therapist"]').should(($ctas) =>{
+                cy.get('a[href*="/therapist/register"]').should(($ctas) =>{
           expect($ctas).length.to.be.greaterThan(3);
         });
         cy.get('#SIT').click();
@@ -38,9 +38,9 @@ describe("For Therapist Page", () => {
         cy.contains('JOIN AS A THERAPIST');
     })
 
-    it("CTA's Navigate to /register/therapist", () => {
+    it("CTA's Navigate to /therapist/register", () => {
       cy.viewport('macbook-13');
-      cy.get('a[href*="/register/therapist"]').first().invoke('attr','href').then(href => {
+      cy.get('a[href*="/therapist/register"]').first().invoke('attr','href').then(href => {
         cy
         .request(href)
         .its('status')
@@ -48,7 +48,7 @@ describe("For Therapist Page", () => {
       })
   
       cy.viewport('ipad-2');
-      cy.get('a[href*="/register/therapist"]').first().invoke('attr','href').then(href => {
+      cy.get('a[href*="/therapist/register"]').first().invoke('attr','href').then(href => {
         cy
         .request(href)
         .its('status')
@@ -56,7 +56,7 @@ describe("For Therapist Page", () => {
       })
   
       cy.viewport('iphone-8');  
-      cy.get('a[href*="/register/therapist"]').first().invoke('attr','href').then(href => {
+      cy.get('a[href*="/therapist/register"]').first().invoke('attr','href').then(href => {
         cy
         .request(href)
         .its('status')

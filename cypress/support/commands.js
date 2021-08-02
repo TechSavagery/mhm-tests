@@ -27,7 +27,7 @@ import "cypress-audit/commands";
 import '@testing-library/cypress/add-commands';
 
 Cypress.Commands.add('therapistLogin', (email, password)=>{
-    cy.visit(Cypress.env('baseUrl') + 'login')
+    cy.visit(Cypress.env('baseUrl') + 'therapist/login')
     cy.get("#inputEmail").clear();
     cy.get("#inputEmail").type(email);
     cy.get("#inputPassword").clear();

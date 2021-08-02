@@ -46,7 +46,6 @@ describe("Consumer to Therapist Contact Form Tests", () => {
     cy.contains("Name is required.");
     cy.contains("A valid email address is required.");
     cy.contains("A valid phone number is required.");
-    cy.contains("A response is required.");
     cy.contains("An answer to this question is required.");
   });
 

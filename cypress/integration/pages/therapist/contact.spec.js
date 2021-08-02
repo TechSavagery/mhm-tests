@@ -99,7 +99,7 @@ describe("Therapist/Contact Page No Authentication Tests", () => {
         cy.visit(Cypress.env("baseUrl") + "therapist/contact");
 
         //Assert
-        cy.location("pathname").should("eq", "/login");
+        cy.location("pathname").should("eq", "/therapist/login");
       });
     });
   });
