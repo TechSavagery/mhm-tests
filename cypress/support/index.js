@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import "./commands";
 import addContext from 'mochawesome/addContext'
+require('cypress-failed-log')
 
 Cypress.on("test:after:run", (test, runnable) => {
     

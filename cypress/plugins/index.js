@@ -27,5 +27,6 @@ module.exports = (on, config) => {
   on("task", {
     lighthouse: lighthouse(), 
     pa11y: pa11y(),
+    failed: require('cypress-failed-log/src/failed')(),
   });
 }

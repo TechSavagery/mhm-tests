@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "description": "Test suite to validate features of the Mental Health Match web app.",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@testing-library/cypress": "^7.0.7",
-    "cypress": "^8.1.0",
+    "cypress": "^8.3.1",
     "cypress-audit": "^0.3.0",
+    "cypress-failed-log": "^2.9.2",
     "cypress-multi-reporters": "^1.5.0",
     "mocha": "^8.4.0",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:interactive:dev": "cypress open --config-file cypress/env/dev.json",
