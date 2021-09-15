@@ -200,11 +200,12 @@ describe("Home Page Tests", () => {
     cy.url().should("include", "search/start?zip=");
   });
 
-  it("Testimonial Carousel Functions", () => {
+  it.only("Testimonial Carousel Functions", () => {
     const testimonials = [
-      "Not only does the site match you to the support",
-      "Mental Health Match matched me with eleven potential therapists in Houston.",
-      "A good resource for finding the right provider in the area",
+      "I finally, FINALLY found a site that matches me up with the kind of therapist I want!",
+      "Mental Health Match is fantastic! I had been searching for a good therapist without success. ",
+      "Mental Health Match is such an amazing resource. ",
+      "Mental Health Match is a great tool to hone in on what your goals are for therapy and find a therapist that meets your needs."
     ];
     cy.get(".carousel-control-next-icon-white").as("next-arrow");
     cy.viewport("macbook-13");
