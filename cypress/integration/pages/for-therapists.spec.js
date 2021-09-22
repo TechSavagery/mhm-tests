@@ -67,23 +67,23 @@ describe("For Therapist Page", () => {
     it("All Sections Load", () => {
         cy.viewport('macbook-13');
         cy.contains('BREAK THROUGH THE NOISE')
-        cy.contains('GROW YOUR PRACTICE WITH CLIENTS WHO FEEL A STRONG')
-        cy.contains('WHY ARE YOU MORE LIKELY TO FIND')
-        cy.contains('Mental Health Match is skilled at advertising')
+        cy.contains('GROW YOUR PRACTICE WITH CLIENTS WHO ARE A GOOD FIT')
+        cy.contains('WHY DOES MENTAL HEALTH MATCH MAKE IT EASIER TO FIND YOUR NICHE CLIENTS')
+        cy.contains('Let Mental Health Match handle the advertising')
         cy.contains('EXPLORE NEW IDEAS TO GROW')
 
         cy.viewport('ipad-2');
         cy.contains('BREAK THROUGH THE NOISE')
-        cy.contains('GROW YOUR PRACTICE WITH CLIENTS WHO FEEL A STRONG')
-        cy.contains('WHY ARE YOU MORE LIKELY TO FIND')
-        cy.contains('Mental Health Match is skilled at advertising')
+        cy.contains('GROW YOUR PRACTICE WITH CLIENTS WHO ARE A GOOD FIT')
+        cy.contains('WHY DOES MENTAL HEALTH MATCH MAKE IT EASIER TO FIND YOUR NICHE CLIENTS')
+        cy.contains('Let Mental Health Match handle the advertising')
         cy.contains('EXPLORE NEW IDEAS TO GROW')
         
         cy.viewport('iphone-8');
         cy.contains('BREAK THROUGH THE NOISE')
-        cy.contains('GROW YOUR PRACTICE WITH CLIENTS WHO FEEL A STRONG')
-        cy.contains('WHY ARE YOU MORE LIKELY TO FIND')
-        cy.contains('Mental Health Match is skilled at advertising')
+        cy.contains('GROW YOUR PRACTICE WITH CLIENTS WHO ARE A GOOD FIT')
+        cy.contains('WHY DOES MENTAL HEALTH MATCH MAKE IT EASIER TO FIND YOUR NICHE CLIENTS')
+        cy.contains('Let Mental Health Match handle the advertising')
         cy.contains('EXPLORE NEW IDEAS TO GROW')
     })
   });
