@@ -113,7 +113,7 @@ To Run Tests in specfic environments:
 ```
 interactive: starts a test managemment browser that allows you to run tests via a GUI
 monitor: Provides the same GUI but automatically runs so that you can just watch it do its thing 
-ci: runs headlessly so you can leverage this in builds 
+ci: runs headlessly so you can leverage this in ci/cd builds 
 ```
 ## Development
 `npm run test:interactive:dev`  

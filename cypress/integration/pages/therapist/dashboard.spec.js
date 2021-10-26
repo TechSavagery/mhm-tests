@@ -30,12 +30,12 @@ describe("Therapist/Dashboard Page Tests", () => {
       cy.contains('Sign Out');
 
       //Dashboard Widgets
-      cy.contains('have seen you as a match.');
+      cy.contains('saw you as a match.');
       cy.contains('viewed your full profile.');
-      cy.contains('have emailed you.');
-      cy.contains('Share with a colleague.');
-      cy.contains('Update your availability.');
-      cy.contains('Share your profile.');
+      cy.contains('emailed you.');
+      cy.contains('Share with a colleague');
+      cy.contains('Update your availability');
+      cy.contains('Share your profile');
     });
     it("Therapist/Account Page Loads Tablet #smoke", () => {
       //Arrange
