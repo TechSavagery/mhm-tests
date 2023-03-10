@@ -78,7 +78,7 @@ https://techsavagery.github.io/mhm-tests/
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
 ### Test Plan Outline
-Therapist
+#### Therapist
  - Account Creation
    -  Basic info 
    -  Profile Prompts, Certifications, Specialities etc 
@@ -104,12 +104,27 @@ Therapist
    -  Edit Article (Not Covered) 
  - Marketing Pages Validation
    -  /for-therapists component validation 
-Consumer
+
+#### Consumer
+
 - Therapist Match
    - e2e Workflow
    - Input Field Validation (Not Covered) 
    - Step Workflow Validation (Not Covered)
+   - Results Filters (Not Covered) 
+   - Contact Therapist Form Validation + Workflow (Partially Covered) 
 - Browse Therapist
+  - e2e Workflow
+  - Results Filters (Not Covered) 
+  - Contact Therapist Form Validation + Workflow (Partially Covered)
+- Browse By Specialty (Not Covered)
+- Browse By States (Not Covered) 
+- Marketing Pages Validation
+   - home page
+   - /articles/about-therapy-and-mental-health/
+   - /articles
+   - Newsletter SignUp (Not Covered) 
+   
 
 ### Built With
 
