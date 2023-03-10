@@ -83,16 +83,16 @@ https://techsavagery.github.io/mhm-tests/
  - Account Creation
    -  Basic info 
    -  Profile Prompts, Certifications, Specialities etc 
- -  Account Edits 
+ - Account Edits 
    -  Basic Info
    -  Prompts, Certifications, Specialities etc
- -  Billing 
+ - Billing 
    -  Sign Up 
    -  Cancellation (Not Covered) 
    -  Change Subscription Type (Not Covered)
- -  Therapist Search 
-   - Search Results 
-   - Email Trigger 
+ - Therapist Search 
+   -  Search Results 
+   -  Email Trigger 
  -  
 - Consumer
 - 
