@@ -84,8 +84,8 @@ https://techsavagery.github.io/mhm-tests/
    -  Basic info 
    -  Profile Prompts, Certifications, Specialities etc 
  -  Account Edits 
-   -   Basic Info
-   -   Prompts, Certifications, Specialities etc
+   -  Basic Info
+   -  Prompts, Certifications, Specialities etc
  -  Billing 
    -  Sign Up 
    -  Cancellation (Not Covered) 
