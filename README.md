@@ -78,24 +78,38 @@ https://techsavagery.github.io/mhm-tests/
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
 ### Test Plan Outline
-- Therapist
- - Marketing Pages Validation
+Therapist
  - Account Creation
    -  Basic info 
    -  Profile Prompts, Certifications, Specialities etc 
  - Account Edits 
    -  Basic Info
    -  Prompts, Certifications, Specialities etc
+   -  Contact Info Phone + Email
  - Billing 
    -  Sign Up 
    -  Cancellation (Not Covered) 
    -  Change Subscription Type (Not Covered)
  - Therapist Search 
    -  Search Results 
-   -  Email Trigger 
- -  
-- Consumer
-- 
+   -  Email Validation
+   -  Favorites Workflow 
+ - Dashboard 
+   -  Trigger and Validate Metrics (Not Covered)
+   -  Referral Code Workflow
+   -  Profile Badghe Validation 
+   -  Update Availability Validation (Not Covered) 
+ - Articles 
+   -  Create Article (Not Covered)
+   -  Edit Article (Not Covered) 
+ - Marketing Pages Validation
+   -  /for-therapists component validation 
+Consumer
+- Therapist Match
+   - e2e Workflow
+   - Input Field Validation (Not Covered) 
+   - Step Workflow Validation (Not Covered)
+- Browse Therapist
 
 ### Built With
 
