@@ -77,6 +77,26 @@ https://techsavagery.github.io/mhm-tests/
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
+### Test Plan Outline
+- Therapist
+ - Marketing Pages Validation
+ - Account Creation
+   -  Basic info 
+   -  Profile Prompts, Certifications, Specialities etc 
+ -  Account Edits 
+   -   Basic Info
+   -   Prompts, Certifications, Specialities etc
+ -  Billing 
+   -  Sign Up 
+   -  Cancellation (Not Covered) 
+   -  Change Subscription Type (Not Covered)
+ -  Therapist Search 
+   - Search Results 
+   - Email Trigger 
+ -  
+- Consumer
+- 
+
 ### Built With
 
 - [Cypress.io](https://www.cypress.io/)
