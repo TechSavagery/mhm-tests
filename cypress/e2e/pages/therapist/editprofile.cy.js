@@ -74,6 +74,29 @@ describe("Therapist/EditProfile Page Tests", () => {
     //Assert
     cy.location("pathname").should("eq", "/therapist/viewprofile");
   });
+
+  it.only("Therapist Can Add Psypact License", () => {
+    //Arrange
+    cy.viewport("macbook-13");
+    cy.therapistLogin(
+      Cypress.env("therapist-subscribed").email,
+      Cypress.env("therapist-subscribed").password
+    );
+
+    //Act
+    cy.contains("Edit Profile", { matchCase: false }).click({ force: true });
+    cy.get('[app-edit-display-locations=""] > .card-body').click();
+    cy.contains("Add Another License").click();
+    cy.get(
+      '[style="position: relative; background-color: transparent;"]'
+    ).clear();
+    cy.get('[style="position: relative; background-color: transparent;"]').type(
+      "PSYPACT{enter}"
+    );
+
+    //Assert
+    cy.contains("State (Or PSYPACT):");
+  });
 });
 
 describe("Therapist/EditProfile Page No Authentication Tests", () => {

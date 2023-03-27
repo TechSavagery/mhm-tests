@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   experimentalStudio: true,
-  retries: 3,
+  retries: 1,
   defaultCommandTimeout: 10000,
   env: {
     baseUrl: 'https://qa.mentalhealthmatch.com/',
@@ -14,6 +14,10 @@ module.exports = defineConfig({
     'contact-form': {
       link: 'therapist-profile/texas/houston/crystal-collier',
       name: 'CRYSTAL',
+    },
+    'admin': {
+      email: 'LaDell',
+      password: 'c3SCOqQLbcBh',
     },
   },
   reporter: 'cypress-multi-reporters',

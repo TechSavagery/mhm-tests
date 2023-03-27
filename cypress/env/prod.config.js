@@ -15,6 +15,10 @@ module.exports = defineConfig({
       link: 'therapist-profile/texas/houston/crystal-collier',
       name: 'CRYSTAL',
     },
+    'admin': {
+      email: 'LaDell',
+      password: 'c3SCOqQLbcBh',
+    },
   },
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
