@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress Tests Chrome
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5.5.1
         with:
           browser: chrome
           headless: true
