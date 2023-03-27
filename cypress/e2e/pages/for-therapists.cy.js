@@ -86,5 +86,13 @@ describe("For Therapist Page", () => {
         cy.contains('Let Mental Health Match handle the advertising')
         cy.contains('EXPLORE NEW IDEAS TO GROW')
     })
+
+    it("Validate Response Headers", () => {
+      cy.request(`${Cypress.env('baseUrl')}for-therapists`).as("forTherapistsPage");
+      cy.get("@forTherapistsPage")
+        .its("headers")
+        .its("cache-control")
+        .should("include", "max-age=2592000");
+    });
   });
   
