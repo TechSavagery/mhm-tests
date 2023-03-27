@@ -75,7 +75,7 @@ describe("Therapist/EditProfile Page Tests", () => {
     cy.location("pathname").should("eq", "/therapist/viewprofile");
   });
 
-  it.only("Therapist Can Add Psypact License", () => {
+  it("Therapist Can Add Psypact License", () => {
     //Arrange
     cy.viewport("macbook-13");
     cy.therapistLogin(
