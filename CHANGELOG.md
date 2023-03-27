@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/TechSavagery/mhm-tests/compare/v1.1.2...v1.2.0) (2023-03-27)
+
+
+### Features
+
+* add tests to validate insurance tags on profile ([0dba70c](https://github.com/TechSavagery/mhm-tests/commit/0dba70c1d9d6854bdb99887d083c8290ae352a26))
+
 ### [1.1.2](https://github.com/TechSavagery/mhm-tests/compare/v1.1.1...v1.1.2) (2023-03-27)
 
 ### [1.1.1](https://github.com/TechSavagery/mhm-tests/compare/v1.1.0...v1.1.1) (2023-03-27)
