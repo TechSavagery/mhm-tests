@@ -1,6 +1,6 @@
 {
   "name": "mhm-automated-tests",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Test suite to validate features of the Mental Health Match web app.",
   "main": "index.js",
   "dependencies": {
