@@ -15,8 +15,8 @@ jobs:
           browser: chrome
           headless: true
           spec: |
-            cypress/integration/workflows/**/*spec.js
-            cypress/integration/pages/**/*spec.js
+            cypress/integration/workflows/**/*cy.js
+            cypress/integration/pages/**/*cy.js
           config-file: cypress/env/qa.config.js
       - name: Upload Screenshots
         uses: actions/upload-artifact@v1
