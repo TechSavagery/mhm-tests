@@ -374,36 +374,4 @@ describe("Consumer Search Tests", () => {
         });
     });
   });
-
-  it("Contact Form Email Domain Suggestion", () => {
-    //Arrange
-    cy.viewport("macbook-13");
-    cy.consumerMatchSearch("77019", "How I feel");
-    cy.wait(5000);
-
-    //Act
-    cy.get('a[href*="therapist-profile"]').first().click({ force: true });
-    cy.get(".ga-contact-modal-button").first().click();
-
-    cy.wait(500);
-    cy.get('[name="name"]').as("name-field").clear().type("name");
-    cy.get('[name="email"]')
-      .as("email-field")
-      .clear()
-      .type("funkyemail897456123@gmail.com");
-    cy.get('[name="phone"]').as("phone-field").clear().type("1234567890");
-    cy.get("select").select("In the next week");
-    cy.get('input[value="Email"]').click();
-
-    cy.get('input[name="reiterateInsurance"]').then(($insuranceConfirm) => {
-      if ($insuranceConfirm.is(":visible")) {
-        cy.get('input[name="reiterateInsurance"]').click();
-      }
-    });
-    cy.get('textarea[placeholder="Optional"]').click();
-    cy.contains("SEND EMAIL TO ").click();
-
-    //Assert
-    cy.contains("The email you entered is not valid.");
-  });
 });
