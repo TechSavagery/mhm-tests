@@ -129,7 +129,7 @@ describe("Consumer Search Tests", () => {
     cy.get('img[src*="api.mapbox"]').should("exist");
   });
 
-  it.only("Consumer Match Filters - Location - Both", () => {
+  it("Consumer Match Filters - Location - Both", () => {
     //Arrange
     cy.viewport("macbook-13");
     cy.consumerMatchSearch("77019", "How I feel");
@@ -145,7 +145,7 @@ describe("Consumer Search Tests", () => {
     cy.get('img[src*="api.mapbox"]').should("exist");
   });
 
-  it.only("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
+  it("Consumer Match Search - Difficult Searcher - Schizophrenia- Desktop #smoke", () => {
     //Arrange
     const schizophreniaList = [
       "Catatonia",
@@ -212,7 +212,7 @@ describe("Consumer Search Tests", () => {
     });
   });
 
-  it.only("Consumer Match Search - Difficult Searcher - Psychosis- Desktop #smoke", () => {
+  it("Consumer Match Search - Difficult Searcher - Psychosis- Desktop #smoke", () => {
     //Arrange
     const disorderList = [
       "Catatonia",
@@ -295,7 +295,7 @@ describe("Consumer Search Tests", () => {
     });
   });
 
-  it.only("Consumer Match Search - Difficult Searcher - Suicidal - Desktop #smoke", () => {
+  it.("Consumer Match Search - Difficult Searcher - Suicidal - Desktop #smoke", () => {
     //Arrange
     const disorderList = [
       "Life Crisis",
@@ -375,7 +375,7 @@ describe("Consumer Search Tests", () => {
     });
   });
 
-  it.only("Contact Form Email Domain Suggestion", () => {
+  it("Contact Form Email Domain Suggestion", () => {
     //Arrange
     cy.viewport("macbook-13");
     cy.consumerMatchSearch("77019", "How I feel");
