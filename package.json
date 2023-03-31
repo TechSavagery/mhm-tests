@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^9.0.0",
-    "cypress": "^12.8.1"
+    "cypress": "^12.9.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

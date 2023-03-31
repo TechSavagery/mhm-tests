@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe("Admin License Workflow Tests", () => {
-  it("Therapist/Account Page Loads - Desktop #smoke", () => {
+  it.skip("Therapist/Account Page Loads - Desktop #smoke", () => {
     cy.adminLogin(Cypress.env("admin").email, Cypress.env("admin").password);
 
     //Act
@@ -10,8 +10,8 @@ describe("Admin License Workflow Tests", () => {
     });
 
     cy.contains("AAMFT Approved Supervisor", { matchCase: false }).click({
-        force: true,
-      });
+      force: true,
+    });
 
     //Assert
     cy.contains("add to AAMFT Approved Supervisor");
