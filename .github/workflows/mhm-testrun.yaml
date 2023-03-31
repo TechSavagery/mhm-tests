@@ -10,14 +10,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress Tests Chrome
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5.5.1
         with:
           browser: chrome
           headless: true
           spec: |
-            cypress/integration/workflows/**/*spec.js
-            cypress/integration/pages/**/*spec.js
-          config-file: cypress/env/qa.json
+            cypress/e2e/workflows/**/*cy.js
+            cypress/e2e/pages/**/*cy.js
+          config-file: cypress/env/qa.config.js
       - name: Upload Screenshots
         uses: actions/upload-artifact@v1
         if: failure()

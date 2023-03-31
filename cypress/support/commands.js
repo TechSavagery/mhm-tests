@@ -35,6 +35,15 @@ Cypress.Commands.add('therapistLogin', (email, password)=>{
     cy.get(".btn").click();
   })
 
+  Cypress.Commands.add('adminLogin', (email, password)=>{
+    cy.visit(Cypress.env('baseUrl') + 'admin')
+    cy.get(':nth-child(2) > .col-md-6 > .form-control').clear();
+    cy.get(':nth-child(2) > .col-md-6 > .form-control').type(email);
+    cy.get(':nth-child(3) > .col-md-6 > .form-control').clear();
+    cy.get(':nth-child(3) > .col-md-6 > .form-control').type(password);
+    cy.get(".btn").click();
+  })
+
   Cypress.Commands.add('consumerMatchSearch', (zipcode, expertise, ) =>{
     cy.log('Navigate to Therapist Search Page')
     cy.get(

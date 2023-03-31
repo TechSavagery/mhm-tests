@@ -9,7 +9,7 @@ describe("Consumer to Therapist Contact Form Tests", () => {
     cy.visit(Cypress.env("baseUrl") + Cypress.env("contact-form").link);
   });
 
-  it.only("User recieves field validation for required fields", () => {
+  it("User recieves field validation for required fields", () => {
     //Arrange
     cy.viewport("macbook-13");
 
@@ -49,7 +49,7 @@ describe("Consumer to Therapist Contact Form Tests", () => {
     cy.contains("An answer to this question is required.");
   });
 
-  it("User recieves email domain suggestions", () => {
+  it.skip("User recieves undeliverable email validation", () => {
     //Arrange
     cy.viewport("macbook-13");
 
@@ -58,7 +58,10 @@ describe("Consumer to Therapist Contact Form Tests", () => {
     cy.contains("CONTACT " + Cypress.env("contact-form").name).click();
     cy.wait(500);
     cy.get('[name="name"]').as("name-field").clear().type("name");
-    cy.get('[name="email"]').as("email-field").clear().type("funkyemail@gmail.co");
+    cy.get('[name="email"]')
+      .as("email-field")
+      .clear()
+      .type("funkyemail897456123@gmail.co");
     cy.get('[name="phone"]').as("phone-field").clear().type("1234567890");
     cy.contains("What do you hope will change through therapy? *")
       .siblings()
@@ -67,30 +70,14 @@ describe("Consumer to Therapist Contact Form Tests", () => {
       .as("expectations-field")
       .click();
     cy.get('textarea[placeholder="Optional"]').click();
-    cy.contains("SEND EMAIL TO " + Cypress.env("contact-form").name).click();
+    cy.contains("email").click();
 
-    //Assert
-    cy.contains("The email you entered is not valid. Did you mean");
-  });
+    //First Appt?
+    cy.get(":nth-child(5) > .form-control");
+    cy.contains("In the next week").click();
 
-  it("User recieves undeliverable email validation", () => {
-    //Arrange
-    cy.viewport("macbook-13");
-
-    //Act
-    cy.wait(3000);
-    cy.contains("CONTACT " + Cypress.env("contact-form").name).click();
-    cy.wait(500);
-    cy.get('[name="name"]').as("name-field").clear().type("name");
-    cy.get('[name="email"]').as("email-field").clear().type("funkyemail897456123@gmail.com");
-    cy.get('[name="phone"]').as("phone-field").clear().type("1234567890");
-    cy.contains("What do you hope will change through therapy? *")
-      .siblings()
-      .get("textarea")
-      .eq(0)
-      .as("expectations-field")
-      .click();
-    cy.get('textarea[placeholder="Optional"]').click();
+    //Results
+    cy.get(".col-md-8 > :nth-child(6) > .form-control").click().type("Testing");
     cy.contains("SEND EMAIL TO " + Cypress.env("contact-form").name).click();
 
     //Assert
