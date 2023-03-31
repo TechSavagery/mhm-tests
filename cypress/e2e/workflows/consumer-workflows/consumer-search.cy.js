@@ -97,7 +97,7 @@ describe("Consumer Search Tests", () => {
     cy.get('input[type="checkbox"]').check();
     cy.wait(3000);
     cy.get("#contact-send-email").click();
-    cy.contains("CLOSE").click();
+    //cy.contains("CLOSE").click();
   });
 
   it("Consumer Match Filters - Location - In-Person Only", () => {
@@ -295,7 +295,7 @@ describe("Consumer Search Tests", () => {
     });
   });
 
-  it.("Consumer Match Search - Difficult Searcher - Suicidal - Desktop #smoke", () => {
+  it("Consumer Match Search - Difficult Searcher - Suicidal - Desktop #smoke", () => {
     //Arrange
     const disorderList = [
       "Life Crisis",
