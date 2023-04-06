@@ -49,6 +49,14 @@ describe("Consumer to Therapist Contact Form Tests", () => {
     cy.contains("An answer to this question is required.");
   });
 
+  it.skip("Contact form includes required does not take insurance warning checkbox", () => {
+    cy.contains("CONTACT " + Cypress.env("contact-form").name).click();
+    cy.wait(500);
+    cy.contains("This therapist is not in-network with any insurance.").should(
+      "be.visible"
+    );
+  });
+
   it.skip("User recieves undeliverable email validation", () => {
     //Arrange
     cy.viewport("macbook-13");
