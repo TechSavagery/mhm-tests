@@ -6,6 +6,9 @@ on:
 jobs:
   qa-environment-tests-chrome:
     runs-on: ubuntu-latest
+    env:
+      RUN_ID: ${{github.run_number}}
+      UNIQUE_RUN_ID: ${{github.run_id}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,7 +33,7 @@ jobs:
         run: npm run report:generate
       - name: Upload S3
         uses: shallwefootball/s3-upload-action@master
-        id: ${{github.run_number}}-${{github.run_id}}
+        id: $RUN_ID - $UNIQUE_RUN_ID
         with:
           aws_key_id: ${{secrets.AWS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
