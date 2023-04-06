@@ -1,6 +1,6 @@
 {
   "name": "mhm-automated-tests",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Test suite to validate features of the Mental Health Match web app.",
   "main": "index.js",
   "dependencies": {
@@ -30,7 +30,8 @@
     "test:monitor:prod": "cypress run --headed --browser chrome --config-file cypress/env/prod.config.js --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js && cypress run --headed --browser firefox --config-file cypress/env/prod.config.js --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js",
     "test:ci:prod": "cypress run --headless --browser chrome --config-file cypress/env/prod.config.js --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js && cypress run --headless --browser firefox --config-file cypress/env/prod.config.js --spec cypress/integration/workflows/**/*spec.js --spec cypress/integration/pages/**/*spec.js",
     "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
-    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
+    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
