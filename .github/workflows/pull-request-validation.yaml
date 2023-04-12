@@ -30,14 +30,14 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: cypress/screenshots-
       - name: Merge Test Result Files
         run: npm run report:merge
       - name: Generate HTML report
         run: npm run report:generate
       - name: Upload S3
         uses: shallwefootball/s3-upload-action@master
-        id: ${steps.generate-uuid.outputs.uuid}
+        id: "${{ steps.generate-uuid.outputs.uuid }}"
         with:
           aws_key_id: ${{secrets.AWS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
