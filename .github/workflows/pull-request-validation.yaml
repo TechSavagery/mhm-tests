@@ -37,11 +37,11 @@ jobs:
         run: npm run report:generate
       - name: Upload S3
         uses: shallwefootball/s3-upload-action@master
-        id: ${{ steps.generate-uuid.outputs.uuid }}
+        id: ${{ job.steps.generate-uuid.outputs.uuid }}
         with:
           aws_key_id: ${{secrets.AWS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: tech-savagery-test-artifacts
           source_dir: public
       - name: Link To Report
-        run: echo "https://s3.amazonaws.com/tech-savagery-test-artifacts/${{ steps.generate-uuid.outputs.uuid }}/index.html"
+        run: echo "https://s3.amazonaws.com/tech-savagery-test-artifacts/${{ job.steps.generate-uuid.outputs.uuid }}/index.html"
