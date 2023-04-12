@@ -37,11 +37,12 @@ jobs:
           name: ${{ github.sha }}
       - name: Upload S3
         uses: shallwefootball/s3-upload-action@master
-        id:  ${{ steps.generate-uuid.outputs.uuid }}
+        id: upload-s3
         with:
           aws_key_id: ${{secrets.AWS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: tech-savagery-test-artifacts
           source_dir: public
+          destination_dir: ${{ steps.generate-uuid.outputs.uuid }}
       - name: Link To Report
         run: echo "https://s3.amazonaws.com/tech-savagery-test-artifacts/${{steps.generate-uuid.outputs.uuid}}/index.html"
