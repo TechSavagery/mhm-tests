@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: cypress-screenshots
-          path: cypress/screenshots-
+          path: cypress/screenshots
       - name: Merge Test Result Files
         run: npm run report:merge
       - name: Generate HTML report
