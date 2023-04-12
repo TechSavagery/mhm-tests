@@ -10,11 +10,6 @@ jobs:
       RUN_ID: ${{github.run_number}}
       UNIQUE_RUN_ID: ${{github.run_id}}
     steps:
-      - name: Set UUID
-        id: generate-uuid
-        uses: filipstefansson/uuid-action@v1
-        with:
-          name: ${{ github.sha }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Cypress Tests Chrome
@@ -35,9 +30,14 @@ jobs:
         run: npm run report:merge
       - name: Generate HTML report
         run: npm run report:generate
+      - name: Set UUID
+        id: generate-uuid
+        uses: filipstefansson/uuid-action@v1
+        with:
+          name: ${{ github.sha }}
       - name: Upload S3
         uses: shallwefootball/s3-upload-action@master
-        id: "${{ steps.generate-uuid.outputs.uuid }}"
+        id:  ${{ steps.generate-uuid.outputs.uuid }}
         with:
           aws_key_id: ${{secrets.AWS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
